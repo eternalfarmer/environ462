@@ -20,23 +20,40 @@
   body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
   a{color:var(--navy)}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  section{padding:72px 0}
+  section{padding:72px 0;scroll-margin-top:112px}
   section.alt{background:var(--bg-alt)}
   h1,h2,h3{line-height:1.2;margin:0 0 .5em}
   h2{font-size:clamp(1.6rem,3vw,2.1rem);color:var(--navy)}
   .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.6em}
   .lede{font-size:1.1rem;color:var(--muted);max-width:760px}
 
-  nav{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
-  nav .brand{font-weight:800;color:var(--maize);text-decoration:none;white-space:nowrap}
-  nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
-  nav ul a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;opacity:.9}
-  nav ul a:hover{opacity:1;text-decoration:underline}
-  @media (max-width:820px){nav ul{display:none}}
+  /* U-M header bar */
+  .topbar{background:var(--navy);color:#fff}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:14px;padding-bottom:14px}
+  .um{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none;min-width:0}
+  .um img{height:40px;width:auto;flex:none}
+  .um-div{width:2px;height:40px;background:rgba(255,255,255,.45);flex:none}
+  .um-text b{display:block;font-size:1.15rem;font-weight:700;line-height:1.2}
+  .um-text small{display:block;font-family:Georgia,"Times New Roman",serif;font-size:.78rem;letter-spacing:.08em;opacity:.9}
+  .mail{display:inline-flex;align-items:center;gap:8px;background:var(--maize);color:var(--navy);font-weight:700;text-decoration:none;padding:9px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap;flex:none}
+  .mail-short{display:none}
 
-  header.hero{background:linear-gradient(180deg,var(--navy) 0%,#0b3a66 100%);color:#fff;padding:72px 0 80px}
-  .hero .tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:22px}
+  /* section nav */
+  .masthead{position:sticky;top:0;z-index:20}
+  .um-text .code{color:var(--maize)}
+  .subnav{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(0,0,0,.04)}
+  .subnav .wrap{display:flex;gap:22px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-top:12px;padding-bottom:12px}
+  .subnav .wrap::-webkit-scrollbar{display:none}
+  .subnav a{color:var(--navy);text-decoration:none;font-size:.9rem;font-weight:600}
+  .subnav a:hover{text-decoration:underline}
+  .subnav a.reg{color:var(--green)}
+
+  section.hero{background:linear-gradient(180deg,#0b3a66 0%,var(--navy) 100%);color:#fff;padding:52px 0 60px}
+  .course-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:16px}
+  .course-line b{color:var(--maize);font-size:1.05rem;letter-spacing:.02em}
+  .course-line span{font-size:.92rem;opacity:.85}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .ctas .btn.ghost{margin-left:0}
   .hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.01em;max-width:860px}
   .hero h1 span{color:var(--maize)}
   .hero p.sub{font-size:1.2rem;max-width:740px;opacity:.92;margin:0 0 28px}
@@ -147,59 +164,111 @@
 
   footer{background:#001a33;color:rgba(255,255,255,.75);font-size:.88rem;padding:28px 0}
   footer a{color:var(--maize)}
+
+  /* phones */
+  .speakers,.mats,.outputs,.reviews{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+  .mats{grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
+  .outputs{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+  @media (max-width:600px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    section{padding:44px 0}
+    h2{font-size:1.45rem}
+    .lede{font-size:1rem}
+    .topbar .wrap{padding-top:10px;padding-bottom:10px;gap:10px}
+    .um{gap:10px}
+    .um img{height:30px}
+    .um-div{height:30px}
+    .um-text b{font-size:.95rem}
+    .um-text .ttl{display:none}
+    .um-text small{font-size:.58rem;letter-spacing:.04em}
+    .mail{padding:8px 12px;font-size:.85rem}
+    .mail-long{display:none}
+    .mail-short{display:inline}
+    .subnav .wrap{gap:18px;padding-top:10px;padding-bottom:10px}
+    .subnav a{font-size:.85rem}
+    section.hero{padding:30px 0 34px}
+    .course-line{display:none}
+    .hero h1{font-size:1.9rem;margin-bottom:.4em}
+    .hero p.sub{font-size:1rem;margin-bottom:18px}
+    .facts{grid-template-columns:1fr 1fr;gap:8px;margin:0 0 20px}
+    .fact{padding:9px 11px;font-size:.88rem;border-radius:10px}
+    .fact b{font-size:.66rem}
+    .ctas{gap:10px}
+    .ctas .btn{flex:1 1 auto;text-align:center;padding:12px 16px;font-size:.95rem}
+    .thesis{font-size:1.1rem}
+    .callout{padding:16px 18px}
+    .instructor{gap:20px}
+    .instructor .photo{width:140px;height:140px;font-size:2rem}
+    .spk{padding:18px}
+    .avatar{width:68px;height:68px}
+    .highlights{grid-template-columns:1fr 1fr}
+    .hl{padding:12px 14px;font-size:.85rem}
+    .reg-grid{gap:24px;grid-template-columns:minmax(0,1fr)}
+    .register .facts{grid-template-columns:1fr 1fr}
+    .qr-box{margin:0 auto}
+    .row .desc{font-size:.88rem}
+    .t{margin-left:4px}
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<div class="masthead">
+<header class="topbar" id="top">
   <div class="wrap">
-    <a class="brand" href="#top">ENVIRON 462.008</a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#project">Your Project</a></li>
-      <li><a href="#sequence">Sessions</a></li>
-      <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#materials">Materials</a></li>
-      <li><a href="#instructor">Instructor</a></li>
-      <li><a href="#register">Register</a></li>
-    </ul>
+    <a class="um" href="#top">
+      <img src="images/logos/block-m.png" alt="University of Michigan">
+      <span class="um-div"></span>
+      <span class="um-text"><b><span class="code">ENVIRON 462.008</span><span class="ttl"> · Entrepreneurship &amp; Innovation for Sustainability</span></b><small>PROGRAM IN THE ENVIRONMENT · UNIVERSITY OF MICHIGAN</small></span>
+    </a>
+    <a class="mail" href="mailto:akshaya@umich.edu?subject=ENVIRON%20462.008%20question"><span class="mail-ico">✉</span><span class="mail-long">akshaya@umich.edu</span><span class="mail-short">Email</span></a>
+  </div>
+</header>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#about">About</a>
+    <a href="#project">Your Project</a>
+    <a href="#sequence">Sessions</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#materials">Materials</a>
+    <a href="#instructor">Instructor</a>
+    <a href="#register" class="reg">Register</a>
   </div>
 </nav>
+</div>
 
-<header class="hero" id="top">
+<section class="hero">
   <div class="wrap">
-    <div class="tag">Program in the Environment · University of Michigan · Winter 2027</div>
+    <div class="course-line"><b>ENVIRON 462.008</b><span>Topics in Environmental Social Science · Winter 2027 · Section 008</span></div>
     <h1>Entrepreneurship &amp; Innovation for <span>Sustainability</span></h1>
     <p class="sub">Pick a sustainability problem you care about. Build a solution with a team that is both profitable and sustainable. Pitch it to experts.</p>
     <div class="facts">
       <div class="fact"><b>When</b>Tue &amp; Thu, 2:30–4:00 PM</div>
       <div class="fact"><b>Dates</b>Jan 13 – Apr 27, 2027</div>
-      <div class="fact"><b>Where</b>B684 SSWB (School of Social Work Building)</div>
+      <div class="fact"><b>Where</b>B684 SSWB</div>
       <div class="fact"><b>Class #</b>35960 · 3 credits</div>
-      <div class="fact"><b>Seats</b>Limited to 24 · Open to all majors</div>
+      <div class="fact"><b>Seats</b>Limited to 24</div>
+      <div class="fact"><b>Open to</b>All majors</div>
     </div>
-    <a class="btn" href="https://webapps.lsa.umich.edu/cg/cg_detail.aspx?content=2620ENVIRON462008&amp;termArray=w_27_2620" target="_blank" rel="noopener">Register for the course →</a>
-    <a class="btn ghost" href="#speakers">Meet the speakers</a>
+    <div class="ctas">
+      <a class="btn" href="https://webapps.lsa.umich.edu/cg/cg_detail.aspx?content=2620ENVIRON462008&amp;termArray=w_27_2620" target="_blank" rel="noopener">Register for the course →</a>
+      <a class="btn ghost" href="mailto:akshaya@umich.edu?subject=ENVIRON%20462.008%20question">Email Akshaya</a>
+    </div>
   </div>
-</header>
+</section>
 
 <section id="about">
   <div class="wrap two">
     <div>
       <div class="eyebrow">About the course</div>
       <p class="thesis">Most sustainability ideas don't fail because they're wrong. They fail because no one figured out who needs them, who will pay for them, and how to make them work. You can't solve a problem you haven't first understood from the people living it. This course is about that discovery, and about building solutions that are both profitable and sustainable, rather than just well-intentioned.</p>
-      <p>Hitting our targets on decarbonization, biodiversity, social justice and human wellbeing will take massive changes to how we live and work. Businesses, governments, nonprofits and citizens all need to be entrepreneurial and innovative.</p>
-      <p>In this course, you'll form a team, choose a problem you care about, and work through it the way entrepreneurs do. You'll map systems and trends, find real pain points by talking to the people affected, and use future visioning, ideation and design thinking to come up with better solutions. Then you'll test whether your idea works for people, for the planet, and as a business, and pitch it to a panel of experts at the end of the term.</p>
-      <p>Along the way, we'll study real ventures and innovators to learn what helps new ideas succeed and what makes them fail.</p>
+      <p>Your team will choose a problem, talk to the people affected, design a solution, test whether it works for people, planet and profit, and pitch it to experts.</p>
     </div>
     <div class="callout">
-      <strong>Who it's for</strong>
-      <ul>
-        <li><b>Students in any school or program.</b> There are no prerequisites.</li>
-        <li>Anyone who wants to turn concern about climate and sustainability into action</li>
-        <li>Future founders, changemakers inside companies and governments, designers, engineers, policy people and the curious</li>
-      </ul>
-      <p style="margin:.9em 0 0"><strong>How we work:</strong> the class is a <em>collaboratory</em>. We experiment, pitch to each other often, and give each other supportive, constructive feedback.</p>
+      <strong>Who it's for:</strong> students in any school or program, with no prerequisites.
+      <p style="margin:.7em 0 0"><strong>How we work:</strong> as a <em>collaboratory</em>. We experiment, pitch often, and give each other constructive feedback.</p>
     </div>
   </div>
 </section>
@@ -356,18 +425,6 @@
       </article>
 
       <article class="spk">
-        <div class="spk-top"><div class="avatar">CZ<img src="images/charlene-zietsma.jpg" alt="Charlene Zietsma" onerror="this.remove()"></div>
-          <div><h3>Charlene Zietsma</h3><p class="role">Max McGraw Professor of Sustainable Enterprise; Faculty Director, Erb Institute, U-M</p></div></div>
-        <p class="edu"><b>Education</b> · Ph.D., Organizational Behaviour, University of British Columbia; MBA, Simon Fraser; B.A., Wilfrid Laurier</p>
-        <ul>
-          <li>Leads U-M's Erb Institute for sustainable business</li>
-          <li>Studies how systems change, including social movements, cross-sector partnerships and clean-tech entrepreneurs</li>
-          <li>Has taught entrepreneurship and strategy since 2000</li>
-        </ul>
-        <a class="more" href="https://www.linkedin.com/in/charlene-zietsma-2660b917/" target="_blank" rel="noopener">LinkedIn →</a>
-      </article>
-
-      <article class="spk">
         <div class="spk-top"><div class="avatar">TE<img src="images/tracey-easthope.jpg" alt="Tracey Easthope" onerror="this.remove()"></div>
           <div><h3>Tracey Easthope</h3><p class="role">Senior Strategist, Health Care Without Harm &amp; Ecology Center</p></div></div>
         <p class="edu"><b>Education</b> · Master's, U-M School of Public Health; B.F.A., Sculpture, Eastern Michigan; B.A., Urban Geography, U-M</p>
@@ -388,17 +445,6 @@
           <li>Researches the food–water–energy nexus using data, models and remote sensing</li>
         </ul>
         <a class="more" href="https://www.linkedin.com/in/anjuli-jain-figueroa/" target="_blank" rel="noopener">LinkedIn →</a>
-      </article>
-
-      <article class="spk">
-        <div class="spk-top"><div class="avatar">SS<img src="images/sara-soderstrom.jpg" alt="Sara Soderstrom" onerror="this.remove()"></div>
-          <div><h3>Sara Soderstrom</h3><p class="role">Director, Program in the Environment; Professor of Organizational Studies, U-M</p></div></div>
-        <p class="edu"><b>Education</b> · Ph.D., Management &amp; Organizations, Northwestern (Kellogg); B.S.E. &amp; M.S.E., Chemical &amp; Environmental Engineering, U-M</p>
-        <ul>
-          <li>Leads U-M's Program in the Environment (PitE), the home of this course</li>
-          <li>Studies how organizations take on sustainability</li>
-        </ul>
-        <a class="more" href="https://www.linkedin.com/in/sara-soderstrom-5a48b3/" target="_blank" rel="noopener">LinkedIn →</a>
       </article>
 
       <article class="spk">
@@ -469,9 +515,8 @@
       <div class="chips">
         <span class="chip">Leabo Teaching Award 2025–26</span>
         <span class="chip">4.9 / 5.0 instructor rating</span>
-        <span class="chip">Boston Business Journal Award winner</span>
       </div>
-      <p class="edu-box"><b>Education</b> · Ph.D. Candidate, Strategy, Michigan Ross; Ed.M., Harvard Graduate School of Education; B.B.A. (High Distinction), Michigan Ross; B.A. (High Honors, Psychology), University of Michigan</p>
+      <p class="edu-box"><b>Education</b> · Ph.D. Candidate, Michigan Ross · Ed.M., Harvard · B.B.A. &amp; B.A., Michigan</p>
       <p>Akshaya studies leading change and innovation, and entrepreneurship. Drawing on in-depth fieldwork, he examines these themes in a range of settings, including the automotive and construction industries, social enterprises, and design thinking firms.</p>
       <p>Before his Ph.D., he spent six years at Deloitte Consulting in Boston as a management consultant, advising leadership teams on change and innovation at clients including Bank of America, American Express, Standard &amp; Poor's, Cigna, Exelon, Johnson Controls, Land O'Lakes and the Commonwealth of Massachusetts. He also led Deloitte's pro bono work with College Bound Dorchester, a Boston nonprofit helping students get to and through college, which earned a Boston Business Journal Corporate Citizenship Award.</p>
       <p>He then worked as a Research Associate at Harvard Business School, where he helped run one of the school's largest studies of innovation in senior teams, following five Fortune 500 companies working with a leading design firm. He has researched and written about organizations including Ford, Corning, Citadel, Kodak, Moleskine, Faber-Castell and Boston Ballet.</p>
