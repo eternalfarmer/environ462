@@ -31,9 +31,11 @@
   .topbar{background:var(--navy);color:#fff}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:14px;padding-bottom:14px}
   .um{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none;min-width:0}
-  .um img{height:40px;width:auto;flex:none}
+  .um img.pite{height:34px;width:auto;flex:none}
+  .um-text{min-width:0}
+  @media (max-width:1000px){.um{flex-direction:column;align-items:flex-start;gap:6px}.um-div{display:none}}
   .um-div{width:2px;height:40px;background:rgba(255,255,255,.45);flex:none}
-  .um-text b{display:block;font-size:1.15rem;font-weight:700;line-height:1.2}
+  .um-text b{display:block;font-size:1rem;font-weight:700;line-height:1.25}
   .um-text small{display:block;font-family:Georgia,"Times New Roman",serif;font-size:.78rem;letter-spacing:.08em;opacity:.9}
   .mail{display:inline-flex;align-items:center;gap:8px;background:var(--maize);color:var(--navy);font-weight:700;text-decoration:none;padding:9px 16px;border-radius:999px;font-size:.92rem;white-space:nowrap;flex:none}
   .mail-short{display:none}
@@ -177,9 +179,8 @@
     .lede{font-size:1rem}
     .topbar .wrap{padding-top:10px;padding-bottom:10px;gap:10px}
     .um{gap:10px}
-    .um img{height:30px}
-    .um-div{height:30px}
-    .um-text b{font-size:.95rem}
+    .um img.pite{height:21px}
+    .um-text b{font-size:.85rem}
     .um-text .ttl{display:none}
     .um-text small{font-size:.58rem;letter-spacing:.04em}
     .mail{padding:8px 12px;font-size:.85rem}
@@ -218,9 +219,9 @@
 <header class="topbar" id="top">
   <div class="wrap">
     <a class="um" href="#top">
-      <img src="images/logos/block-m.png" alt="University of Michigan">
+      <img class="pite" src="images/logos/pite-logo.png" alt="University of Michigan Program in the Environment">
       <span class="um-div"></span>
-      <span class="um-text"><b><span class="code">ENVIRON 462.008</span><span class="ttl"> · Entrepreneurship &amp; Innovation for Sustainability</span></b><small>PROGRAM IN THE ENVIRONMENT · UNIVERSITY OF MICHIGAN</small></span>
+      <span class="um-text"><b><span class="code">ENVIRON 462.008</span><span class="ttl"> · Entrepreneurship &amp; Innovation for Sustainability</span></b></span>
     </a>
     <a class="mail" href="mailto:akshaya@umich.edu?subject=ENVIRON%20462.008%20question"><span class="mail-ico">✉</span><span class="mail-long">akshaya@umich.edu</span><span class="mail-short">Email</span></a>
   </div>
